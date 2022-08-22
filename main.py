@@ -736,7 +736,7 @@ def onmessage(update,bot:ObigramClient):
         
         elif '/config' in msgText:
              msg_nub = "💡LISTA DE NUBES\n"
-             msg_nub += "☁️ Eduvirtual ☛ /eduvirtual\n"
+             msg_nub += "☁️ cujae ☛ /cujae\n"
              msg_nub += "☁️ Aulacened ☛ /aulacened\n"
              msg_nub += "☁️ Cursos ☛ /cursos\n"
              msg_nub += "☁️ Evea ☛ /evea\n"
