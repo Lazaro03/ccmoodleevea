@@ -260,7 +260,7 @@ def onmessage(update,bot:ObigramClient):
     try:
         thread = bot.this_thread
         username = update.message.sender.username
-        tl_admin_user = os.environ.get('AQUI TU USER SIN @')
+        tl_admin_user = os.environ.get('Chris_bel14')
 
         #Descomentar debajo solo si se ba a poner el usuario admin de telegram manual
         tl_admin_user = 'Chris_bel14'
@@ -280,7 +280,7 @@ def onmessage(update,bot:ObigramClient):
                 user_info = jdb.get_user(username)
                 jdb.save()
         else:
-            mensaje = "Usted no tiene acceso.\nPor favor Contacta con mi Programador @"+"AQUI_TU_USER"+"/n"
+            mensaje = "Usted no tiene acceso.\nPor favor Contacta con mi Programador @"+"Chris_bel14"+"/n"
             intento_msg = "💢El usuario @"+username+ " ha intentando usar el bot sin permiso💢"
             bot.sendMessage(update.message.chat.id,mensaje)
             bot.sendMessage(Aqui el mismo id del canal,intento_msg)
@@ -481,7 +481,7 @@ def onmessage(update,bot:ObigramClient):
 
         if '/start' in msgText:
             start_msg = ' Bienvenido a Ultra_Fast \n'
-            start_msg+= ' Soporte AQUI TU @ \n'
+            start_msg+= ' Soporte @Chris_bel14 \n'
             start_msg+= ' Antes de comenzar vea el /tuto \n'
             start_msg+= " Para ver las subidas disponibles pulse /config \n\n"
             bot.editMessageText(message,start_msg)
