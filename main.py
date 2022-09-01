@@ -534,22 +534,22 @@ def onmessage(update,bot:ObigramClient):
                 bot.editMessageText(message,'🗑Archivo Borrado🗑')
             else:
                 bot.editMessageText(message,'Error y Causas \n1-Revise su Cuenta\n2-Servidor Desabilitado: '+client.path)
-        # elif '/delall' in msgText and user_info['cloudtype']=='moodle':
-        #     proxy = ProxyCloud.parse(user_info['proxy'])
-        #     client = MoodleClient(user_info['moodle_user'],
-        #                           user_info['moodle_password'],
-        #                           user_info['moodle_host'],
-        #                           user_info['moodle_repo_id'],
-        #                           proxy=proxy)
-        #     loged = client.login()
-        #     if loged:
-        #         evfiles = client.getEvidences()
-        #         for item in evfiles:
-        #         	client.deleteEvidence(item)
-        #         client.logout()
-        #         bot.editMessageText(message,'🗑Archivos Borrados🗑')
-        #     else:
-        #         bot.editMessageText(message,'Error y Causas \n1-Revise su Cuenta\n2-Servidor Desabilitado: '+client.path)       
+         elif '/delall' in msgText and user_info['cloudtype']=='moodle':
+             proxy = ProxyCloud.parse(user_info['proxy'])
+             client = MoodleClient(user_info['moodle_user'],
+                                   user_info['moodle_password'],
+                                   user_info['moodle_host'],
+                                   user_info['moodle_repo_id'],
+                                   proxy=proxy)
+             loged = client.login()
+             if loged:
+                 evfiles = client.getEvidences()
+                 for item in evfiles:
+                 	client.deleteEvidence(item)
+                 client.logout()
+                 bot.editMessageText(message,'🗑Archivos Borrados🗑')
+             else:
+                 bot.editMessageText(message,'Error y Causas \n1-Revise su Cuenta\n2-Servidor Desabilitado: '+client.path)       
         elif '/download' in msgText:
             obten_name = msgText.split(" ")[1]
             url = msgText.split(" ")[2]
