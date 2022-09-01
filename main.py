@@ -223,24 +223,22 @@ def ddl(update,bot,message,url,obten_name,file_name='',thread=None,jdb=None):
         # else:
         #     megadl(update,bot,message,url,file_name,thread,jdb=jdb)
 
-# def megadl(update,bot,message,megaurl,file_name='',thread=None,jdb=None):
-#     megadl = megacli.mega.Mega({'verbose': True})
-#     megadl.login()
-#     try:
-#         info = megadl.get_public_url_info(megaurl)
-#         file_name = info['name']
-#         megadl.download_url(megaurl,dest_path=None,dest_filename=file_name,progressfunc=downloadFile,args=(bot,message,thread))
-#         if not megadl.stoping:
-#             processFile(update,bot,message,file_name,thread=thread)
-#     except:
-#         files = megaf.get_files_from_folder(megaurl)
-#         for f in files:
-#             file_name = f['name']
-#             megadl._download_file(f['handle'],f['key'],dest_path=None,dest_filename=file_name,is_public=False,progressfunc=downloadFile,args=(bot,message,thread),f_data=f['data'])
-#             if not megadl.stoping:
-#                 processFile(update,bot,message,file_name,thread=thread)
-#         pass
-#     pass
+ def megadl(update,bot,message,megaurl,file_name='',thread=None,jdb=None):
+     megadl = megacli.mega.Mega({'verbose': True})
+     megadl.login()
+    try:
+        info = megadl.get_public_url_info(megaurl)
+         file_name = info['name']
+         megadl.download_url(megaurl,dest_path=None,dest_filename=file_name,progressfunc=downloadFile,args=(bot,message,thread))
+         if not megadl.stoping:             processFile(update,bot,message,file_name,thread=thread)
+    except:
+        files = megaf.get_files_from_folder(megaurl)
+        for f in files:
+            file_name = f['name']            megadl._download_file(f['handle'],f['key'],dest_path=None,dest_filename=file_name,is_public=False,progressfunc=downloadFile,args=(bot,message,thread),f_data=f['data'])
+            if not megadl.stoping:
+                processFile(update,bot,message,file_name,thread=thread)
+        pass
+     pass
 
 def sendTxt(name,files,update,bot):
                 txt = open(name,'w')
